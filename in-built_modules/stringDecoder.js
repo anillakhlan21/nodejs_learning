@@ -1,0 +1,1 @@
+const stringDecoder = require('string_decoder');
