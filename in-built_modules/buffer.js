@@ -21,7 +21,20 @@ const server = http.createServer();
 // })
 
 // server.listen(8080);
+function createBufferFromString(str){
+    return Buffer.from(str);
+}
 
+function createZeroFilledBuffer(length){
+    return Buffer.alloc(length);
+}
+
+function concatenateBuffers(buf1, buf2){
+    return Buffer.concat([buf1, buf2])
+}
+function compareBuffers(buf1, buf2){
+    return Buffer.compare(buf1, buf2)
+}
 
 
 const name = 'anil kumar, ';
@@ -51,3 +64,11 @@ console.log(Buffer.isBuffer(buf4))
 console.log(buf4.toJSON())
 
 console.log(JSON.stringify(buf4.keys()))
+
+
+module.exports = {
+    createBufferFromString,
+    createZeroFilledBuffer,
+    concatenateBuffers,
+    compareBuffers
+  };
